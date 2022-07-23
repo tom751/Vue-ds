@@ -1,0 +1,48 @@
+[
+  {
+    "components": [
+      {
+        "exportName": "default",
+        "displayName": "HelloWorld",
+        "docsBlocks": [
+          "some docs"
+        ],
+        "description": "",
+        "tags": {},
+        "props": [
+          {
+            "name": "msg",
+            "description": "A message",
+            "required": true,
+            "type": {
+              "name": "string"
+            }
+          }
+        ]
+      },
+      {
+        "exportName": "default",
+        "displayName": "TheWelcome",
+        "description": "",
+        "tags": {}
+      },
+      {
+        "displayName": "WelcomeItem",
+        "description": "",
+        "tags": {},
+        "slots": [
+          {
+            "name": "icon"
+          },
+          {
+            "name": "heading"
+          },
+          {
+            "name": "default"
+          }
+        ]
+      }
+    ],
+    "name": "Core"
+  }
+]
