@@ -41,6 +41,31 @@
             "name": "default"
           }
         ]
+      },
+      {
+        "displayName": "IconCommunity",
+        "description": "",
+        "tags": {}
+      },
+      {
+        "displayName": "IconDocumentation",
+        "description": "",
+        "tags": {}
+      },
+      {
+        "displayName": "IconEcosystem",
+        "description": "",
+        "tags": {}
+      },
+      {
+        "displayName": "IconSupport",
+        "description": "",
+        "tags": {}
+      },
+      {
+        "displayName": "IconTooling",
+        "description": "",
+        "tags": {}
       }
     ],
     "name": "Core"

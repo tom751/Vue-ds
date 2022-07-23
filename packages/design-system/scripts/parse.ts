@@ -1,13 +1,13 @@
 import { parse, type ComponentDoc } from 'vue-docgen-api'
 import { promises as fs } from 'fs'
-import path from 'path'
+import fg from 'fast-glob'
 
 interface ProjectConfig {
   path: string
   name: string
 }
 
-const projects: ProjectConfig[] = [{ name: 'Core', path: '../core/src/components' }]
+const projects: ProjectConfig[] = [{ name: 'Core', path: '../core/src/components/**/*.vue' }]
 
 interface ProjectComponents {
   name: string
@@ -19,13 +19,12 @@ export default async function parseComponents() {
 
   for (let i = 0; i < projects.length; i++) {
     const project = projects[i]
-    const dir = await fs.readdir(project.path)
-    const vueFiles = dir.filter((f: string) => f.endsWith('.vue'))
+    const vueFiles = await fg(project.path)
+    console.log(vueFiles)
 
     const components: ComponentDoc[] = []
     for (let j = 0; j < vueFiles.length; j++) {
-      const vueFile = path.join(project.path, vueFiles[j])
-      const component = await parse(vueFile)
+      const component = await parse(vueFiles[j])
       components.push(component)
     }
 
