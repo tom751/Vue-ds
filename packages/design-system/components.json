@@ -2,70 +2,94 @@
   {
     "components": [
       {
-        "exportName": "default",
-        "displayName": "HelloWorld",
-        "docsBlocks": [
-          "some docs"
-        ],
-        "description": "",
-        "tags": {},
-        "props": [
-          {
-            "name": "msg",
-            "description": "A message",
-            "required": true,
-            "type": {
-              "name": "string"
+        "docs": {
+          "exportName": "default",
+          "displayName": "HelloWorld",
+          "docsBlocks": [
+            "some docs"
+          ],
+          "description": "",
+          "tags": {},
+          "props": [
+            {
+              "name": "msg",
+              "description": "A message",
+              "required": true,
+              "type": {
+                "name": "string"
+              }
             }
-          }
-        ]
+          ]
+        },
+        "folder": ""
       },
       {
-        "exportName": "default",
-        "displayName": "TheWelcome",
-        "description": "",
-        "tags": {}
+        "docs": {
+          "exportName": "default",
+          "displayName": "TheWelcome",
+          "description": "",
+          "tags": {}
+        },
+        "folder": ""
       },
       {
-        "displayName": "WelcomeItem",
-        "description": "",
-        "tags": {},
-        "slots": [
-          {
-            "name": "icon"
-          },
-          {
-            "name": "heading"
-          },
-          {
-            "name": "default"
-          }
-        ]
+        "docs": {
+          "displayName": "WelcomeItem",
+          "description": "",
+          "tags": {},
+          "slots": [
+            {
+              "name": "icon"
+            },
+            {
+              "name": "heading"
+            },
+            {
+              "name": "default"
+            }
+          ]
+        },
+        "folder": ""
       },
       {
-        "displayName": "IconCommunity",
-        "description": "",
-        "tags": {}
+        "docs": {
+          "displayName": "IconCommunity",
+          "description": "",
+          "tags": {}
+        },
+        "folder": "icons"
       },
       {
-        "displayName": "IconDocumentation",
-        "description": "",
-        "tags": {}
+        "docs": {
+          "displayName": "IconDocumentation",
+          "description": "",
+          "tags": {}
+        },
+        "folder": "icons"
       },
       {
-        "displayName": "IconEcosystem",
-        "description": "",
-        "tags": {}
+        "docs": {
+          "displayName": "IconEcosystem",
+          "description": "",
+          "tags": {}
+        },
+        "folder": "icons"
       },
       {
-        "displayName": "IconSupport",
-        "description": "",
-        "tags": {}
+        "docs": {
+          "displayName": "IconSupport",
+          "description": "",
+          "tags": {}
+        },
+        "folder": "icons"
       },
       {
-        "displayName": "IconTooling",
-        "description": "",
-        "tags": {}
+        "docs": {
+          "displayName": "IconTooling",
+          "description": "",
+          "tags": {}
+        },
+        "folder": "icons"
       }
     ],
     "name": "Core"

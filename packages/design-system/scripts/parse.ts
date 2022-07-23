@@ -9,9 +9,34 @@ interface ProjectConfig {
 
 const projects: ProjectConfig[] = [{ name: 'Core', path: '../core/src/components/**/*.vue' }]
 
+interface Component {
+  docs: ComponentDoc
+  folder: string
+}
+
 interface ProjectComponents {
   name: string
-  components: ComponentDoc[]
+  components: Component[]
+}
+
+function getComponentFolderName(filePath: string) {
+  // The section of the path to cut the folder name from AFTER
+  const prefix = 'components/'
+
+  const index = filePath.indexOf(prefix)
+  if (index === -1) {
+    return ''
+  }
+
+  const substring = filePath.slice(index + prefix.length)
+
+  // trim off the component name
+  const split = substring.split('/')
+  if (split.length > 1) {
+    return split.slice(0, split.length - 1).join('/')
+  }
+
+  return ''
 }
 
 export default async function parseComponents() {
@@ -20,12 +45,15 @@ export default async function parseComponents() {
   for (let i = 0; i < projects.length; i++) {
     const project = projects[i]
     const vueFiles = await fg(project.path)
-    console.log(vueFiles)
 
-    const components: ComponentDoc[] = []
+    const components: Component[] = []
     for (let j = 0; j < vueFiles.length; j++) {
-      const component = await parse(vueFiles[j])
-      components.push(component)
+      const filePath = vueFiles[j]
+      const component = await parse(filePath)
+      components.push({
+        docs: component,
+        folder: getComponentFolderName(filePath),
+      })
     }
 
     projectComponents.push({

@@ -1,11 +1,10 @@
 <script setup lang="ts">
+import { getComponentDocs } from '@/utils/docs'
 import { useRoute } from 'vue-router'
-import projectComponents from '../../components.json'
 
 const route = useRoute()
 
-const project = projectComponents.find((pc) => pc.name === route.params.project)
-const component = project?.components.find((c) => c.displayName === route.params.component)
+const component = getComponentDocs(route.params.project as string, route.params.component as string)
 </script>
 
 <template>

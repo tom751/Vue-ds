@@ -10,8 +10,10 @@ import projectComponents from '../../components.json'
       <details>
         <summary class="cursor-pointer text-xl">{{ project.name }}</summary>
         <ul class="pl-5">
-          <li v-for="component in project.components" :key="component.displayName">
-            <router-link :to="`/${project.name}/${component.displayName}`">{{ component.displayName }}</router-link>
+          <li v-for="component in project.components" :key="component.docs.displayName">
+            <router-link :to="`/${project.name}/${component.docs.displayName}`">
+              {{ component.folder ? `${component.folder}/${component.docs.displayName}` : component.docs.displayName }}
+            </router-link>
           </li>
         </ul>
       </details>
